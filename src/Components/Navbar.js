@@ -8,9 +8,13 @@ const Navbar = ({ isLoggedIn, LogoutAction }) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        init()
+    }, [])
+
+    const init = () => {
         if (localStorage.getItem('userData'))
             dispatch({ type: Types.isLoggedIn, isLoggedIn: true })
-    }, [])
+    }
 
     return (
 
